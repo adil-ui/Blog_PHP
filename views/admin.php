@@ -12,15 +12,22 @@
         height:65vh;
       }
     </style>
-    <title>Profil</title>
+    <title>Profile</title>
 </head>
 <body>
 <?php include 'navbar.php'?>
-<main>
+  <section>
+    <aside class=''>
+      <a href="" class='border-bottom'>Liste des articles</a>
+      <a href="" class='border-bottom'>Mes Informations</a>
+    </aside>
+    <main>
+      
+    </main>
+  </section>
 
 
 
-</main>
 
 <?php include 'footer.php'?>
 

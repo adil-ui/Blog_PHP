@@ -3,6 +3,7 @@ include "../routes/routes.php";
 require '../vendor/autoload.php';
 
 $url = $_GET["url"] ? $_GET["url"] : "home";
+session_start();
 
 if(array_key_exists($url, $routes)) {
   $controller = $routes["$url"];

@@ -12,7 +12,7 @@
         height:65vh;
       }
     </style>
-    <title>Inscription</title>
+    <title>Sign up</title>
 </head>
 <body>
 <?php include 'navbar.php'?>
@@ -34,18 +34,14 @@
     <label class="form-label">Password</label>
     <input type="password" class="form-control"  name='mot_passe'>
   </div>
-  <?php 
-   if( isset($_SESSION['succes_msg'])){ ?>
-  <p class='text-succes text-center'><?php echo $_SESSION['succes_msg'] ?></p>
-  <?php } else if(isset($_SESSION['error_msg'])) {?>
+  
+  <?php if(isset($_SESSION['error_msg'])) {?>
     <p class='text-danger text-center'><?php echo $_SESSION['error_msg'] ?></p>
     <?php } ?>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Envoyer</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
-
-
 
 </main>
 

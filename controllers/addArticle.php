@@ -1,17 +1,15 @@
 <?php
-use Models;
+use Models\Article;
 include '../Database.php';
-
-session_start();
 try {
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if(!empty($_POST['titre']) && !empty($_POST['image'])  && !empty($_POST['description'])){
+    if(!empty($_POST['titre']) && !empty($_POST['image'])  && !empty($_POST['description']) && !empty($_POST['auteur'])){
       $titre = $_POST['titre'];
       $image = $_POST['image'];
       $description = $_POST['description'];
       $auteur = $_POST['auteur'];
       $date_publication = date('Y-m-d');
-      $id_admin = $_SESSION['id'];
+      $id_admin = 1;
       Article::create('article',['titre', 'image', 'description','auteur', 'date_publication', 'id_admin'], [$titre, $image, $description,$auteur, $date_publication, $id_admin], $con);
       $_SESSION['success_msg'] = "evoi avec succès";
       header('Location: home'); 
