@@ -1,0 +1,14 @@
+{
+    "name": "adil/blog",
+    "autoload": {
+        "psr-4": {
+            "Models\\": "model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "adil"
+        }
+    ],
+    "require": {}
+}

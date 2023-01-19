@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(public/images/.*\.(jpe?g|png))$ %{REQUEST_FILENAME} [L]
+RewriteRule ^(public/css/.*\.(css))$ %{REQUEST_FILENAME} [L]
+RewriteRule ^((?!public/).*)$ public/index.php?url=$1 [L,QSA]

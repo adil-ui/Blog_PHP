@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.article_container{
+    width: 80%;
+    margin: auto;
+}
+.my_article{
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.article_img{
+   border-radius: 5px;
+   border: rgb(241, 241, 241);
+}
+.article_img img{
+   border-radius: 5px 5px 0px 0px;
+
+}
