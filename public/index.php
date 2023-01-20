@@ -1,6 +1,7 @@
 <?php 
 include "../routes/routes.php";
 require '../vendor/autoload.php';
+include '../views/header.php';
 
 $url = $_GET["url"] ? $_GET["url"] : "home";
 session_start();

@@ -1,12 +1,8 @@
 <?php 
-use Models\Article;
 use Models\User;
 include '../Database.php';
-if($_SESSION['role'] == 'admin'){
-    $articles = Article::getAll('article', $con);
 
-}else{
-    $user = User::getById('utilisateur',$_SESSION['id'], $con);
+$user = User::getById('utilisateur',$_SESSION['id'], $con);
 
 try {
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -35,8 +31,5 @@ try {
       echo "Erreur : " . $e->getMessage();
     }
   
-}
-
-
-include "../views/admin.php";
+include_once "../views/user_data.php";
 ?>

@@ -6,9 +6,10 @@ if(!isset($_GET['id'])) {
   header("location: home");
 }
 
-$id = $_GET["id"];
-$article = Article::getById('article', $id, $con);
-$comment = Commentaire::getComment($id, $con);
+$id_article = $_GET["id"];
+
+$article = Article::getById('article', $id_article, $con);
+$comment = Commentaire::getComment($id_article, $con);
 
 
 try {
@@ -17,8 +18,9 @@ try {
         $auteur = $_POST['auteur'];
         $description = $_POST['description'];
         $date_publication = date('Y-m-d');
+        $date_publication = date('Y-m-d');
         try {
-          Commentaire::create('commentaire',['auteur', 'description', 'date_publication'], [$auteur, $description, $date_publication], $con);
+          Commentaire::create('commentaire',['auteur', 'description', 'date_publication','id_article'], [$auteur, $description, $date_publication, $id_article], $con);
         } catch(PDOException $e){
         $_SESSION['error_msg'] = "Erreur lors de l'envoi";
           echo "Erreur : " . $e->getMessage();

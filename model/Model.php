@@ -18,23 +18,25 @@ class Model{
         }
         $params = implode(",", $place_holders);
         $sql = "UPDATE $tableName SET $params WHERE id = $id";
-        $con->prepare($sql);
-        $con->execute($values);
+        $res = $con->prepare($sql);
+        $res->execute($values);
     }
 // -------------------------------     METHODE DELETE    -------------------------------------------
     public static function delete($tableName, $id, $con){
-        $sql = "DELETE $tableName WHERE id = $id";
+        $sql = "DELETE FROM $tableName WHERE id = $id";
         $con->query($sql);
     }
 // -------------------------------     METHODE GETALL    -------------------------------------------
     public static function getAll($tableName, $con){
         $sql = "SELECT * from $tableName";
         return $con->query($sql);
+
     }
 // -------------------------------     METHODE GETBYID   -------------------------------------------
     public static function getById($tableName, $id, $con){
         $sql = "SELECT * from $tableName WHERE id = $id";
-        return $con->query($sql);
+        $req = $con->query($sql);
+        return $req->fetch();
     }
 }
 ?>

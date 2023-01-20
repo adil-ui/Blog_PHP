@@ -1,12 +1,4 @@
-<?php include_once 'header.php'?>
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <style>
         .my_container{
             width:80%;
@@ -14,7 +6,6 @@
         }
     </style>
 </head>
-<body>
 <header>
         <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container-fluid my_container">
@@ -24,13 +15,10 @@
                 </button>
                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item  py-1">
+                        <li class="nav-item ">
                             <a class="nav-link" href="home">Home</a>
                         </li>
-                        <li class="nav-item py-1">
-                            <a class="nav-link" href="addArticle">Add Article</a>
-                        </li> 
-                        <li class="nav-item dropdown py-1">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Account
                             </a>
@@ -43,11 +31,11 @@
                                 <li><a class="dropdown-item" href="inscription">Sign up</a></li>
                                 <?php if(!empty($_SESSION['nom']) && !empty($_SESSION['prenom'])){ ?>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="admin">Profile</a></li>
                                 <?php  } ?>          
                             </ul>
                             <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])){ ?>
-                                    <li class='nav-item py-1'>
+                                    <li class='nav-item'>
                                         <p class="nav-link">Hi, <?php echo $_SESSION['prenom'] ,' ', $_SESSION['nom']?></p>
                                     </li>
                                 <?php  } ?>
@@ -58,5 +46,3 @@
             </div>
         </nav>
     </header>
-</body>
-</html>

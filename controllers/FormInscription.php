@@ -7,9 +7,9 @@ try {
       $nom = $_POST['nom'];
       $prenom = $_POST['prenom'];
       $email = $_POST['email'];
-      $mot_passe = $_POST['mot_passe'];
+      $mot_passe = password_hash(trim($_POST['mot_passe']), PASSWORD_DEFAULT);
       try {
-        User::create('utilisateur',['prenom', 'nom', 'email','mot_passe'], [$prenom, $nom, $email, $mot_passe], $con);
+        User::create('utilisateur',['prenom', 'nom', 'email','mot_passe', 'role'], [$prenom, $nom, $email, $mot_passe, 'user'], $con);
         header('Location: connection');
       } catch(PDOException $e){
       $_SESSION['error_msg'] = "Erreur lors de l'envoi";

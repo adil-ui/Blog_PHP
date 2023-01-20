@@ -12,17 +12,17 @@ try {
       $id_admin = 1;
       Article::create('article',['titre', 'image', 'description','auteur', 'date_publication', 'id_admin'], [$titre, $image, $description,$auteur, $date_publication, $id_admin], $con);
       $_SESSION['success_msg'] = "evoi avec succès";
-      header('Location: home'); 
+      header('Location: admin'); 
     } else {
       $_SESSION['error_msg'] = "Erreur lors de l'envoi";
-      include '../views/addArticle.php';     
+      include '../views/new_article.php';     
     }
   }
   else{
     if(isset($_SESSION['error_msg'])) {
       unset($_SESSION['error_msg']);
     }
-    include '../views/addArticle.php';
+    include '../views/new_article.php';
 
   }
   
