@@ -38,7 +38,7 @@
   <main>
     <section class="details_container row">
         <div class='my_details mx-auto'>
-        <a href="details" class='text-dark text-center'><h4><?php echo $article["titre"] ?></h4></a>
+        <h3 class='text-center'><?php echo $article["titre"] ?></h3>
           <div class="details_img mt-4">
             <a href="details"><img src="<?php  echo $article["image"] ?>" alt="" class=''></a>
           </div>

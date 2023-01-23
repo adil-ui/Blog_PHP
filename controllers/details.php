@@ -18,7 +18,6 @@ try {
         $auteur = $_POST['auteur'];
         $description = $_POST['description'];
         $date_publication = date('Y-m-d');
-        $date_publication = date('Y-m-d');
         try {
           Commentaire::create('commentaire',['auteur', 'description', 'date_publication','id_article'], [$auteur, $description, $date_publication, $id_article], $con);
         } catch(PDOException $e){
@@ -39,13 +38,6 @@ try {
   }catch(PDOException $e){
       echo "Erreur : " . $e->getMessage();
     }
-
-
-
-
-
-
-
 
 
 include "../views/details.php";

@@ -15,7 +15,6 @@ class Commentaire extends Post{
     public static function getComment($id, $con){
         $sql = "SELECT * from commentaire WHERE id_article=$id";
         return $con->query($sql);
-        
     }
 
 }
